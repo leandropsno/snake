@@ -1,22 +1,19 @@
 package control;
 
-import model.ISpace;
-import view.IGUI;
+import model_view.IGUI;
 
 public class Control implements IControl {
 
     private IGUI gui;
-    private ISpace space;
+    private int snakeSize = 3;
 
     public void connect(IGUI gui) {
         this.gui = gui;
     }
 
-    public void connect(ISpace space) {
-        this.space = space;
-    }
-
     public void executeGame() {
         while (gui.startPanelActive()) {}
+        gui.initializeGrid();
+        gui.initializeSnake();
     }
 }

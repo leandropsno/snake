@@ -1,4 +1,4 @@
-package view;
+package model_view;
 
 import javax.swing.*;
 import javax.swing.border.Border;

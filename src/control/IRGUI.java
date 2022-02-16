@@ -1,6 +1,6 @@
 package control;
 
-import view.IGUI;
+import model_view.IGUI;
 
 public interface IRGUI {
 

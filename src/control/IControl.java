@@ -1,6 +1,6 @@
 package control;
 
 
-public interface IControl extends IRGUI, IRSpace, IActionControl {
+public interface IControl extends IRGUI, IActionControl {
 
 }
