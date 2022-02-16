@@ -3,7 +3,6 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class GUI extends JFrame implements IGUI {
 
@@ -17,10 +16,15 @@ public class GUI extends JFrame implements IGUI {
         this.setTitle("Snake!");
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.add(panel);
+        this.setLayout(null);
     }
 
-    public void showStartPanel() {
-        this.add(panel);
+    public boolean startPanelActive() {
+        if (panel.isVisible()) {
+            return true;
+        }
+        return false;
     }
 
     @Override

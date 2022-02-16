@@ -17,6 +17,6 @@ public class Control implements IControl {
     }
 
     public void executeGame() {
-        gui.showStartPanel();
+        while (gui.startPanelActive()) {}
     }
 }
