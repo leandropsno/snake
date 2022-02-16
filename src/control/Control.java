@@ -16,4 +16,7 @@ public class Control implements IControl {
         this.space = space;
     }
 
+    public void executeGame() {
+
+    }
 }

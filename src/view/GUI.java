@@ -1,4 +1,4 @@
 package view;
 
-public class GUI {
+public class GUI implements IGUI {
 }
