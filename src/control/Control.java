@@ -11,9 +11,23 @@ public class Control implements IControl {
         this.gui = gui;
     }
 
-    public void executeGame() {
-        while (gui.startPanelActive()) {}
+    public void executeGame() throws InterruptedException {
+        while (gui.startPanelActive()) {
+            continue;
+        }
         gui.initializeGrid();
         gui.initializeSnake();
+
+        boolean loss = false;
+
+        while (!loss) {
+            if (snakeSize == 1225) {
+                break;
+            }
+            loss = gui.updateSnake();
+        }
+
+        System.out.println("Done");
+        gui.dispose();
     }
 }

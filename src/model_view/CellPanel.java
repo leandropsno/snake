@@ -1,11 +1,15 @@
 package model_view;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
-public class CellPanel extends JPanel {
+public class CellPanel extends JPanel implements KeyListener {
 
     private char content, direction;
+    private Border border = BorderFactory.createLineBorder(Color.black);
 
     public CellPanel(int x, int y) {
         super();
@@ -13,7 +17,8 @@ public class CellPanel extends JPanel {
         this.content = 'e';
         this.direction = 'n';
         this.setBackground(Color.black);
-        this.setVisible(true);
+        this.setLayout(null);
+        this.setBorder(border);
     }
 
     public void setContent(char content) {
@@ -35,10 +40,35 @@ public class CellPanel extends JPanel {
 
     public void updateColor() {
         if (this.content == 'e') {
-            this.setBackground(Color.cyan);
-        }
-        else {
             this.setBackground(Color.black);
         }
+        else {
+            this.setBackground(Color.cyan);
+        }
     }
+
+    @Override
+    public void keyTyped(KeyEvent keyEvent) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent keyEvent) {
+        switch (keyEvent.getKeyCode()) {
+            case 37: setDirection('l');
+                break;
+            case 38: setDirection('u');
+                break;
+            case 39: setDirection('r');
+                break;
+            case 40: setDirection('d');
+                break;
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent keyEvent) {
+
+    }
+
 }

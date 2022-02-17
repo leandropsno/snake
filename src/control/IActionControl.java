@@ -2,6 +2,6 @@ package control;
 
 public interface IActionControl {
 
-    public void executeGame();
+    public void executeGame() throws InterruptedException;
 
 }

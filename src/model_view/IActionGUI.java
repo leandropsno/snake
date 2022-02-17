@@ -2,14 +2,14 @@ package model_view;
 
 public interface IActionGUI {
 
-    public boolean startPanelActive();
+    boolean startPanelActive();
 
-    public void initializeGrid();
+    void initializeGrid();
 
-    public void initializeSnake() ;
+    void initializeSnake() throws InterruptedException;
 
-    public void setCellContent(int i, int j, char content);
+    void dispose();
 
-    public void setCellDirection(int i, int j, char direction);
+    boolean updateSnake();
 
 }

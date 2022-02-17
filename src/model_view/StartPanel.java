@@ -33,7 +33,9 @@ public class StartPanel extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent actionEvent) {
         if (actionEvent.getSource() == button) {
+            button.setEnabled(false);
             this.setVisible(false);
+            System.out.println("The start panel is no longer visible.");
         }
     }
 }
