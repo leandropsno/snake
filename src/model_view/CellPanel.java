@@ -8,7 +8,7 @@ import java.awt.event.KeyListener;
 
 public class CellPanel extends JPanel implements KeyListener {
 
-    private char content, direction;
+    private char content, direction, previousDirection;
     private Border border = BorderFactory.createLineBorder(Color.black);
 
     public CellPanel(int x, int y) {
@@ -30,6 +30,10 @@ public class CellPanel extends JPanel implements KeyListener {
         this.direction = direction;
     }
 
+    public void setPreviousDirection(char direction) {
+        this.previousDirection = direction;
+    }
+
     public char getContent() {
         return this.content;
     }
@@ -37,6 +41,8 @@ public class CellPanel extends JPanel implements KeyListener {
     public char getDirection() {
         return this.direction;
     }
+
+    public char getPreviousDirection() {return this.previousDirection; }
 
     public void updateColor() {
         if (this.content == 'e') {
@@ -47,9 +53,8 @@ public class CellPanel extends JPanel implements KeyListener {
         }
     }
 
-    @Override
-    public void keyTyped(KeyEvent keyEvent) {
-
+    public void paint(Graphics g) {
+        super.paint(g);
     }
 
     @Override
@@ -64,6 +69,11 @@ public class CellPanel extends JPanel implements KeyListener {
             case 40: setDirection('d');
                 break;
         }
+    }
+
+    @Override
+    public void keyTyped(KeyEvent keyEvent) {
+
     }
 
     @Override

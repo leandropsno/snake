@@ -6,10 +6,16 @@ public interface IActionGUI {
 
     void initializeGrid();
 
-    void initializeSnake() throws InterruptedException;
+    void initializeSnake();
 
     void dispose();
 
-    boolean updateSnake();
+    boolean updateSnakeCell(int i, int j);
+
+    int getHeadI();
+
+    int getHeadJ();
+
+     void generateFood();
 
 }

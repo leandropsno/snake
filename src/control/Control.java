@@ -13,18 +13,20 @@ public class Control implements IControl {
 
     public void executeGame() throws InterruptedException {
         while (gui.startPanelActive()) {
-            continue;
+            //System.out.println("Waiting to start");
         }
+
         gui.initializeGrid();
         gui.initializeSnake();
 
-        boolean loss = false;
+        boolean success = true;
 
-        while (!loss) {
+        while (success) {
             if (snakeSize == 1225) {
                 break;
             }
-            loss = gui.updateSnake();
+            success = gui.updateSnakeCell(gui.getHeadI(), gui.getHeadJ());
+            Thread.sleep(100);
         }
 
         System.out.println("Done");
